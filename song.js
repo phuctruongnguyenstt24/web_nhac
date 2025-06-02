@@ -23,7 +23,7 @@ let songs=[
 
 {
     name:'Lưu Luyến Sau Chia Tay',
-    path:'./MUSIC_one?Lưu Luyến Sau Chia Tay - Try92 ft. Kai06 ｜ Official Lyrics Video.mp3' ,
+    path:'./MUSIC_one/Lưu Luyến Sau Chia Tay - Try92 ft. Kai06 ｜ Official Lyrics Video.mp3' ,
     artist:'Chí Thiện',
     image :' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAqxGBADdH9bKUtvlLSlkb1QOXOLjF078J_g&s'
     
