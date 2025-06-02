@@ -1,0 +1,383 @@
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Thanh navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #222;
+            padding: 15px 30px;
+            color: white;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4CAF50;
+        }
+
+        .search-box input {
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: none;
+            width: 200px;
+        }
+
+
+
+     .login-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Login Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 350px;
+            text-align: center;
+        }
+        
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .modal-content h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .modal-content input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .login-option {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+        
+        .social-login {
+            margin-top: 15px;
+        }
+        
+        .social-login p {
+            margin-bottom: 10px;
+            color: #666;
+        }
+        
+        .google-btn, .facebook-btn {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .google-btn {
+            background-color: #DB4437;
+            color: white;
+        }
+        
+        .facebook-btn {
+            background-color: #1877F2;
+            color: white;
+        }
+        
+.container 
+{
+ /*   
+    max-width:  350px;
+    height:  550px;
+    margin: 50px auto;
+    border-radius:  20px ;
+    background-color: rgb(20, 3, 62);
+    background: rgba(1, 18, 41, 0.399);
+    box-shadow: 0 40px 90px rgb(1, 11, 65);
+    padding: 30px ;
+    overflow: hidden;
+    color: rgb(15, 2, 33) ;
+    text-align: center;
+*/
+
+    max-width: 350px;
+    height: 550px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgb(39, 15, 100);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(7, 37, 234, 0.1);
+    text-align: center;
+
+}
+
+.ten-bai-hat,.tac-gia 
+{
+    text-align: center;
+    text-transform: capitalize;
+    color: #ddd;
+
+
+}
+
+.ten-bai-hat
+{
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom:  10px ;
+}
+
+.tac-gia
+{
+  font-size: 15px;
+}
+
+.box-disk
+{
+  width: 180px ;
+  height: 180px;
+  border-radius: 50%;
+  position: relative;
+  display: bloc;
+  margin: 40px auto;
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAqxGBADdH9bKUtvlLSlkb1QOXOLjF078J_g&s) no-repeat top left;
+  box-shadow: 0 0 0 5px rgba(0, 5, 2, 0.8) ;
+  animation: rotate 20s linear infinite;
+  animation-play-state: paused;
+
+
+} 
+.box-disk.play{
+    animation-play-state: running;
+}
+.box-disk::before
+{
+    content: '';
+    position: absolute;
+    top : 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) ;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background:  rgba(16, 54, 112, 0.399) ;
+}
+.song-image {
+  width: 100%;
+  max-width: 300px; /* Điều chỉnh kích thước tối đa */
+  height: auto;
+  border: 3px solid #333; /* Viền màu xám đậm */
+  border-radius: 0; /* Bỏ bo góc nếu muốn viền vuông */
+  display: block;
+  margin: 0 auto 20px; /* Căn giữa và cách dưới 20px */
+  object-fit: cover; /* Đảm bảo ảnh phủ đầy khung */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ nếu cần */
+}
+.music-slider
+
+{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: #ccc;
+
+}
+
+.seek-bar{
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+    background: #ccc;
+    -webkit-appearance: none ;
+    cursor: pointer;
+    overflow: hidden;
+
+}
+
+.seek-bar::-webkit-slider-thumb{
+    -webkit-appearance: none ;
+     width: 1px;
+     height: 20px;
+     background: forestgreen;
+     box-shadow: -400px 0 0 400px royalblue;
+
+}
+
+.current-time,
+.music-time {
+  font-size: 15px;
+  position: absolute;
+  bottom: -20px;
+}
+
+.current-time {
+  left: 0;
+}
+
+.music-time {
+  right: 0;
+}
+
+.controls
+{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 20px;
+
+}
+
+.btn-play{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: coral;
+    cursor: pointer;
+    border: none;
+
+}
+
+.btn-play span{
+    position: absolute;
+    top:50%;
+    left: 25%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 30px;
+    border-radius: 2px;
+    background: beige;
+    clip-path: polygon(0 0, 100% 0 , 100% 100% ,0% 100%);
+    transition: .5s;
+
+}
+
+.btn-play span:nth-child(2){
+    left: 55% ;
+    transform-origin: center;
+}
+
+.btn-play.pause span:nth-child(2)
+{
+    transform:translateY(-50%) scaleY(0) ;
+
+}
+
+.btn-play.pause span:nth-child(1)
+{
+    width: 35%;
+    left: 53% ;
+    transform: translate(-50%,-50%);
+    border-radius: 0;
+    clip-path: polygon(0 0, 100% 50% , 100% 50% ,0% 100%);
+}
+
+.btn-play.pause {
+    animation: pulse 2s linear infinite  ;
+
+}
+@keyframes pulse {
+    0%{
+        box-shadow:  0;
+
+    }
+    50%{
+        box-shadow: 0 0 0 5px rgb(1, 11, 65);
+    }
+    100%{
+        box-shadow: 0 0 0 5px rgba(16,53,123,1);
+    }
+}
+
+.btn{
+    width: 40px;
+    height: 40px;
+    background: salmon;
+    border-radius: 50%;
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    margin-top: 8px;
+
+}
+
+@keyframes rotate{
+     0%{
+       transform: rotate(0);
+
+    }
+    
+    100%{
+        transform: rotate(360deg);
+    }
+}

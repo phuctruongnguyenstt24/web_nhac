@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trinh phat nhac</title>
+    <link rel="icon"  href="Gemini_Generated_Image_idjdn4idjdn4idjd.jpg">
+    <link rel="stylesheet" href="style_phat_nhac.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+<body>
+   
+    <header>
+        <div class="navbar">
+            <div class="logo">PHUCZALO MUSIC</div>
+            <ul class="nav-links">
+                <li><a href="#">TRANG CHỦ</a></li>
+                <li><a href="#">THƯ VIỆN</a></li>
+                <li><a href="#">PLAYLIST</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="search" placeholder="Tìm kiếm bài hát...">
+            </div>
+            <button class="login-btn" id="loginBtn">
+                <i class="fas fa-user"></i> ĐĂNG NHẬP
+            </button>
+        </div>
+    </header>
+
+    
+
+
+        <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+             
+            <h2>ĐĂNG NHẬP</h2>
+            <span class="close">&times;</span>
+            <input type="email" id="email" placeholder="Email của bạn">
+            <input type="password" id="password" placeholder="Mật khẩu">
+            <button class="login-option" onclick="emailLogin()">ĐĂNG NHẬP</button>
+            <p>Hoặc đăng nhập bằng:</p>
+            <div class="social-login">
+                <button class="google-btn" onclick="loginWithGoogle()">
+                    <i class="fab fa-google"></i> Google
+                </button>
+                <button class="facebook-btn" onclick="loginWithFacebook()">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+ 
+
+<audio src="" id="audio"></audio>
+    <div class="container">
+       <h1 class="ten-bai-hat">ten bai hat 1</h1>
+       <p class="tac-gia">tac gia  1</p>
+       <div class="box-disk">
+
+       </div>
+       <div class="music-slider">
+
+         <input type="range" value="0" class="seek-bar"/>        
+         <span class="current-time">00:00</span>
+         <span class="music-time">00:00</span>
+        </div>
+         <div class="controls">
+            <button class="btn btnback"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+            <button class="btn-play pause"> 
+            <span></span>
+            <span></span>
+            </button>
+            <button class="btn btnnext"><i class="fa fa-chevron-right"  aria-hidden="true"></i></button>
+         </div>
+       </div>
+
+    <script src="song.js"></script>
+    <script src="trinh_phat_nhac.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
+<script>
+  // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT_ID.appspot.com",
+            messagingSenderId: "YOUR_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+  //---------------
+        const loginBtn = document.getElementById("loginBtn");
+        const loginModal = document.getElementById("loginModal");
+        const closeBtn = document.querySelector(".close");
+
+
+  //------------
+   // Modal Handling
+        loginBtn.addEventListener("click", () => {
+            loginModal.style.display = "flex";
+        });
+
+        closeBtn.addEventListener("click", () => {
+            loginModal.style.display = "none";
+        });
+
+        window.addEventListener("click", (e) => {
+            if (e.target === loginModal) {
+                loginModal.style.display = "none";
+            }
+        });
+
+  
+  //---
+    function loginWithGoogle() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider)
+        .then((result) => {
+            alert(`Đăng nhập thành công với Google: ${result.user.displayName}`);
+            loginModal.style.display = "none";
+        })
+        .catch((error) => {
+            alert("Lỗi đăng nhập Google: " + error.message);
+        });
+}
+
+function loginWithFacebook() {
+    const provider = new firebase.auth.FacebookAuthProvider();
+    firebase.auth().signInWithPopup(provider)
+        .then((result) => {
+            alert(`Đăng nhập thành công với Facebook: ${result.user.displayName}`);
+            loginModal.style.display = "none";
+        })
+        .catch((error) => {
+            alert("Lỗi đăng nhập Facebook: " + error.message);
+        });
+}
+</script>
+
+
+    
+</body>
+</html>
